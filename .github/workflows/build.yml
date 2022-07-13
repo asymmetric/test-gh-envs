@@ -9,5 +9,5 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: push master branch to binary cache
-        if: github.ref == 'refs/heads/main'
-        run: echo "Something very secret'
+        if: github.ref != 'refs/heads/main'
+        run: echo "Something very secret"
