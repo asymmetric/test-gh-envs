@@ -13,3 +13,7 @@ jobs:
         env:
           SCRT: ${{ secrets.POOP }}
         run: echo "Something very secret is ${SCRT}"
+      - name: use env secrets
+        env:
+          SCRT: ${{ secrets.BOB }}
+        run: echo "Something very secret is ${SCRT}"
