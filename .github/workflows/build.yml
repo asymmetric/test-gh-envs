@@ -1,0 +1,19 @@
+name: Build test VM images
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: push master branch to binary cache
+        if: github.ref != 'refs/heads/main'
+        env:
+          SCRT: ${{ secrets.fake }}
+        run: echo "Something very secret is ${SCRT}"
+      - name: use env secrets
+        env:
+          SCRT: ${{ secrets.boss }}
+        run: echo "Something very secret is ${SCRT}"
