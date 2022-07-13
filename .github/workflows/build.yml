@@ -10,4 +10,6 @@ jobs:
       - uses: actions/checkout@v2
       - name: push master branch to binary cache
         if: github.ref != 'refs/heads/main'
-        run: echo "Something very secret"
+        env:
+          SCRT: ${{ secrets.POOP }}
+        run: echo "Something very secret is ${SCRT}"
