@@ -11,9 +11,9 @@ jobs:
       - name: push master branch to binary cache
         if: github.ref != 'refs/heads/main'
         env:
-          SCRT: ${{ secrets.POOP }}
+          SCRT: ${{ secrets.fake }}
         run: echo "Something very secret is ${SCRT}"
       - name: use env secrets
         env:
-          SCRT: ${{ secrets.BOB }}
+          SCRT: ${{ secrets.boss }}
         run: echo "Something very secret is ${SCRT}"
