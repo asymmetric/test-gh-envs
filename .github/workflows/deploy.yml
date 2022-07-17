@@ -12,5 +12,6 @@ jobs:
       - name: push master branch to binary cache
         if: github.ref != 'refs/heads/main'
         run: echo "Something very secret is ${{ secrets.fake }}"
+
       - name: use env secrets
         run: echo "environment secret ${{ secrets.boss }}"
