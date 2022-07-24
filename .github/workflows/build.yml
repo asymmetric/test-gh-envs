@@ -2,6 +2,8 @@ name: Build test VM images
 on:
   push:
   pull_request:
+    types:
+      - synchronize
 
 jobs:
   build:
